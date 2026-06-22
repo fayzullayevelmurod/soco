@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Анамнез пацієнта та дані досліджень</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./assets/scss/style.css" />
+    <style>
+      /* Toolbar active state */
+      .casey-comments__tool.is-active svg path {
+        stroke: #30abe0;
+      }
+      .casey-comments__tool.is-active {
+        opacity: 1;
+      }
+      /* Contenteditable textarea */
+      .casey-comments__textarea[contenteditable] {
+        min-height: 80px;
+        outline: none;
+        cursor: text;
+      }
+      .casey-comments__textarea[contenteditable]:empty::before {
+        content: attr(data-placeholder);
+        color: rgba(60, 60, 60, 0.4);
+        pointer-events: none;
+        display: block;
+      }
+      /* Formatted text inside editor & comments */
+      .casey-comments__textarea strong,
+      .casey-comments__text strong { font-weight: 700; }
+      .casey-comments__textarea em,
+      .casey-comments__text em { font-style: italic; }
+      .casey-comments__textarea a,
+      .casey-comments__text a { color: #30abe0; text-decoration: underline; }
+    </style>
+  </head>
+  <body class="casey-content-page">
+    <div class="wrapper">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-top">
+          <div class="container header-top__container">
+            <div class="header-top__text">
+              <img src="./assets/images/fire.png" width="16" alt="" />
+              <p>Текст про ближайший вебинар 01.04.2026</p>
+            </div>
+            <a href="#">Ссылка на вебинар</a>
+          </div>
+        </div>
+        <div class="container header-container">
+          <a href="/" class="header-logo">
+            <img src="./assets/images/logo.svg" alt="" />
+            <img src="./assets/images/logo-text.svg" alt="" />
+          </a>
+          <ul class="header-nav">
+            <li><a href="#">Найближчий вебінар</a></li>
+            <li><a href="#">Купити все для ендо</a></li>
+            <li><a href="#">Безкоштовні вебінари</a></li>
+            <li><a href="#">Контакти</a></li>
+          </ul>
+          <div class="header-right">
+            <a href="#"><img src="./assets/images/user-logo.svg" alt="" /></a>
+            <button class="header-bars">
+              <img src="./assets/images/bars.svg" alt="" />
+            </button>
+          </div>
+        </div>
+      </header>
+      <!-- Header end -->
+
+      <!-- Data modal -->
+      <section class="modal data-modal">
+        <div class="modal-bg"></div>
+        <div class="modal-dialog">
+          <div class="container">
+            <div class="modal-content">
+              <div class="modal-content__head">
+                <h2>Редагувати дані</h2>
+                <button class="modal-close">
+                  <svg
+                    width="21"
+                    height="21"
+                    viewBox="0 0 21 21"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.19 11.37L1.44667 20.1133C1.29111 20.2689 1.1 20.3522 0.873333 20.3633C0.646666 20.3744 0.444444 20.2911 0.266666 20.1133C0.0888886 19.9356 0 19.7389 0 19.5233C0 19.3078 0.0888886 19.1111 0.266666 18.9333L9.01 10.19L0.266666 1.44667C0.111111 1.29111 0.0277774 1.1 0.0166663 0.873333C0.00555514 0.646666 0.0888886 0.444444 0.266666 0.266666C0.444444 0.0888886 0.641111 0 0.856667 0C1.07222 0 1.26889 0.0888886 1.44667 0.266666L10.19 9.01L18.9333 0.266666C19.0889 0.111111 19.2806 0.0277774 19.5083 0.0166663C19.7339 0.00555514 19.9356 0.0888886 20.1133 0.266666C20.2911 0.444444 20.38 0.641111 20.38 0.856667C20.38 1.07222 20.2911 1.26889 20.1133 1.44667L11.37 10.19L20.1133 18.9333C20.2689 19.0889 20.3522 19.2806 20.3633 19.5083C20.3744 19.7339 20.2911 19.9356 20.1133 20.1133C19.9356 20.2911 19.7389 20.38 19.5233 20.38C19.3078 20.38 19.1111 20.2911 18.9333 20.1133L10.19 11.37Z"
+                      fill="black"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  placeholder="Прізвище ім'я по-батькові"
+                  class="form-inp"
+                />
+                <input
+                  type="email"
+                  placeholder="Електронна пошта"
+                  class="form-inp"
+                />
+                <input
+                  type="tel"
+                  placeholder="Номер телефону"
+                  class="form-inp"
+                />
+                <div class="form-date">
+                  <label for="">Ваша дата нарождення</label>
+                  <div class="form-date__inp">
+                    <input type="number" placeholder="дд" maxlength="2" />
+                    <input type="number" placeholder="мм" maxlength="2" />
+                    <input type="number" placeholder="гг" maxlength="4" />
+                  </div>
+                </div>
+                <input type="text" placeholder="Ваше місто" class="form-inp" />
+                <select class="form-select">
+                  <option value="Місце роботи" selected>
+                    Ваше місце роботи
+                  </option>
+                  <option value="select-1">select 1</option>
+                  <option value="select-2">select 2</option>
+                </select>
+                <input type="text" placeholder="Ваша посада" class="form-inp" />
+              </div>
+              <button class="main-btn">Зберегти зміни</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Data modal end -->
+
+      <main>
+        <!-- Dashboard -->
+        <section class="dashboard">
+          <div class="dashboard-container">
+            <button class="dashboard-btn">
+              <span class="dashboard-btn__left">
+                <img src="./assets/images/nav-link-icon-6-active.svg" alt="" />
+                <span>Кейси</span>
+              </span>
+              <img src="./assets/images/nav-icon.svg" alt="" class="icon" />
+            </button>
+            <div class="dashboard-left">
+              <ul class="dashboard-nav">
+                            <li>
+                                <a href="./dashboard.html">
+                                    <img src="./assets/images/nav-link-icon-1-active.svg" alt="">
+                                    <img src="./assets/images/nav-link-icon-1.svg" alt="">
+                                    <span>Головна</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./certificate.html">
+                                    <img src="./assets/images/nav-link-icon-2-active.svg" alt="">
+                                    <img src="./assets/images/nav-link-icon-2.svg" alt="">
+                                    <span>Мої сертифікати</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./webinar.html">
+                                    <img src="./assets/images/nav-link-icon-3-active.svg" alt="">
+                                    <img src="./assets/images/nav-link-icon-3.svg" alt="">
+                                    <span>Вебінари у записі</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./my-achievements.html">
+                                    <img src="./assets/images/nav-link-icon-4-active.svg" alt="">
+                                    <img src="./assets/images/nav-link-icon-4.svg" alt="">
+                                    <span>Мої досягнення</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./tarif.html">
+                                    <img src="./assets/images/nav-link-icon-5-active.svg" alt="">
+                                    <img src="./assets/images/nav-link-icon-5.svg" alt="">
+                                    <span>Пакетні пропозиції</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./casey.html" class="active">
+                                    <img src="./assets/images/nav-link-icon-6-active.svg" alt="">
+                                    <img src="./assets/images/nav-link-icon-6.svg" alt="">
+                                    <span>Кейси</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./assets/images/nav-link-icon-7-active.svg" alt="">
+                                    <img src="./assets/images/nav-link-icon-7.svg" alt="">
+                                    <span>Тестування</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./equipment.html">
+                                    <img src="./assets/images/nav-link-icon-7-active.svg" alt="">
+                                    <img src="./assets/images/nav-link-icon-7.svg" alt="">
+                                    <span>Огляд обладнання</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./assets/images/nav-link-icon-1-active.svg" alt="">
+                                    <img src="./assets/images/nav-link-icon-1.svg" alt="">
+                                    <span>Блог</span>
+                                </a>
+                            </li>
+                        </ul>
+            </div>
+            <div class="dashboard-right">
+              <!-- Casey content -->
+              <section class="casey casey-content">
+                <!-- Breadcrumb -->
+                <nav class="casey-content__breadcrumb">
+                  <a href="./casey.html">Кейси</a>
+                  <svg
+                    width="6"
+                    height="10"
+                    viewBox="0 0 6 10"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 1L5 5L1 9"
+                      stroke="#3C3C3C"
+                      stroke-opacity="0.5"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <span>Основний зміст кейсу</span>
+                </nav>
+
+                <!-- Meta tags -->
+                <div class="casey-content__tags lightblue">
+                  <span class="tarif-navs__tag">Автор: Юлія Кікцьо</span>
+                  <span class="tarif-navs__tag"
+                    >Спеціальність: Лікар-пародонтолог</span
+                  >
+                  <span class="tarif-navs__tag"
+                    >Категорія: (додаткові спеціальності)</span
+                  >
+                  <span class="tarif-navs__tag"
+                    >Рівень складності: Середній</span
+                  >
+                  <span class="tarif-navs__tag">Приблизний час читання:</span>
+                  <span class="tarif-navs__tag">Ключові слова:</span>
+                </div>
+
+                <!-- Title -->
+                <h2>Анамнез пацієнта та дані досліджень</h2>
+
+                <!-- Section badge -->
+                <div class="casey-content__badge">Основний зміст кейсу</div>
+
+                <!-- Content rows -->
+                <div class="casey-content__body">
+                  <div class="casey-content__row">
+                    <div class="casey-content__label">Стать</div>
+                    <div class="casey-content__value">жіноча</div>
+                  </div>
+                  <div class="casey-content__row">
+                    <div class="casey-content__label">Вік</div>
+                    <div class="casey-content__value">58 років</div>
+                  </div>
+                  <div class="casey-content__row">
+                    <div class="casey-content__label">Скарги</div>
+                    <div class="casey-content__value">
+                      звернулась з метою заміни старих металокерамічних
+                      конструкцій та загальної санації
+                    </div>
+                  </div>
+                  <div class="casey-content__row">
+                    <div class="casey-content__label">
+                      Загальносоматичний анамнез
+                    </div>
+                    <div class="casey-content__value">не обтяжений</div>
+                  </div>
+                  <div class="casey-content__row">
+                    <div class="casey-content__label">Обстеження</div>
+                    <div class="casey-content__value">
+                      Огляд, пародонтальний скринінг-тест, рентгендіагностика –
+                      КПКТ та периапікальні рентгенограми
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Text paragraphs -->
+                <div class="casey-content__text">
+                  <p>
+                    Згідно результатів обстеження було виявлено локалізований
+                    пародонтит в ділянці зуба 45, який характеризується
+                    вертикальним типом втрати кісткової тканини та утворенням
+                    внутрішньокісткового дефекту. Також, виявлено, що дана зона
+                    перебуває під надмірним оклюзійним навантаженням внаслідок
+                    некоректного протезування
+                  </p>
+                  <p>
+                    Зняття ортопедичної конструкції<br />
+                    Проведення професійної гігієни та консервативного
+                    пародонтологічного лікування<br />
+                    Пародонтальна регенерація внутрішньокісткового дефекту зуба
+                    45:<br />
+                    Інфільтрація не знеболення<br />
+                    Створення доступу до дефекту (супракрестальний та
+                    інтрасулькулярний розріз, лезо 15С
+                  </p>
+                  <p>
+                    Обробка ділянки(видалення грануляцій), обробка поверхні
+                    кореня звуковим скелетом та кюретами Грейсі<br />
+                    Промивання фізіологічним розчином<br />
+                    Мембрана(резорбуюча, перикард) + заповнення дефекту
+                    кістковим графтом( ксено)<br />
+                    Ушивання 6,0 ( внутрішній горизонтальний матрацніїта
+                    одиничні вузлові)<br />
+                    Зняття швів через 10 днів<br />
+                    Повторний візит та обстеження( зондування на рентгенографії)
+                    призначено через 9 місяців
+                  </p>
+                  <p>
+                    Враховуючи наявність внутрішньокісткового дефекту в ділянці
+                    зуба, який планується як опорний у мостоподібній
+                    конструкції, проведення пародонтальної регенерації є
+                    критичним моментом, задля збереження функції зуба.
+                  </p>
+                  <p>
+                    Пародонтальна регенерація – методика збереження зубів з
+                    вертикальними кістковими дефектами, що дозволяє не лише
+                    сформувати нове прикріплення, а й відновити повноцінну
+                    функцію
+                  </p>
+                  <p>
+                    Гінгівіт індукований біоплівкою. Локалізований пародонтит 45
+                    зуба. Вертикальний дефект кісткової тканини в ділянці 45
+                    зуба
+                  </p>
+                </div>
+
+                <!-- Image slider -->
+                <div class="casey-content__slider">
+                  <div class="casey-content__slider-nav">
+                    <button class="casey-slider-prev">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 8 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M7 1L1 7L7 13"
+                          stroke="#3C3C3C"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                    <button class="casey-slider-next">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 8 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1 1L7 7L1 13"
+                          stroke="#3C3C3C"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="swiper casey-swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <img
+                          src="./assets/images/card-1.png"
+                          alt="Фото кейсу 1"
+                        />
+                      </div>
+                      <div class="swiper-slide">
+                        <img
+                          src="./assets/images/card-1.png"
+                          alt="Фото кейсу 2"
+                        />
+                      </div>
+                      <div class="swiper-slide">
+                        <img
+                          src="./assets/images/card-1.png"
+                          alt="Фото кейсу 3"
+                        />
+                      </div>
+                      <div class="swiper-slide">
+                        <img
+                          src="./assets/images/card-1.png"
+                          alt="Фото кейсу 4"
+                        />
+                      </div>
+                      <div class="swiper-slide">
+                        <img
+                          src="./assets/images/card-1.png"
+                          alt="Фото кейсу 5"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Comments -->
+                <div class="casey-comments">
+                  <h3>Комментарии</h3>
+
+                  <!-- Comment input -->
+                  <div class="casey-comments__form">
+                    <div class="casey-comments__form-head">
+                      <div class="casey-comments__avatar">
+                        <img src="./assets/images/user-logo.svg" alt="" />
+                      </div>
+                      <span class="casey-comments__name">Владимир</span>
+                    </div>
+                    <div
+                      id="casey-comment-input"
+                      class="casey-comments__textarea"
+                      contenteditable="true"
+                      data-placeholder="Написати коментар..."
+                    ></div>
+                    <div class="casey-comments__toolbar">
+                      <div class="casey-comments__tools">
+                        <button class="casey-comments__tool" title="Жирний">
+                          <svg
+                            width="12"
+                            height="14"
+                            viewBox="0 0 12 14"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M2 7H7.5C9.15685 7 10.5 5.65685 10.5 4C10.5 2.34315 9.15685 1 7.5 1H2V7ZM2 7H8C9.65685 7 11 8.34315 11 10C11 11.6569 9.65685 13 8 13H2V7Z"
+                              stroke="#3C3C3C"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </button>
+                        <button class="casey-comments__tool" title="Курсив">
+                          <svg
+                            width="10"
+                            height="14"
+                            viewBox="0 0 10 14"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8 1H4M6 1L4 13M4 13H0M6 13H4"
+                              stroke="#3C3C3C"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </button>
+                        <button class="casey-comments__tool" title="Посилання">
+                          <svg
+                            width="16"
+                            height="10"
+                            viewBox="0 0 16 10"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M6 5H10M1.5 5C1.5 7.48528 3.51472 9.5 6 9.5H7M10 9.5H10.5C12.9853 9.5 15 7.48528 15 5C15 2.51472 12.9853 0.5 10.5 0.5H10M6 0.5H5.5C3.01472 0.5 1 2.51472 1 5"
+                              stroke="#3C3C3C"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                      <button
+                        id="casey-comment-submit"
+                        class="casey-comments__submit"
+                      >
+                        Отправить
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Comments list -->
+                  <div id="casey-comments-list" class="casey-comments__list">
+                    <div class="casey-comments__item">
+                      <div class="casey-comments__item-head">
+                        <div class="casey-comments__avatar">
+                          <img src="./assets/images/user-logo.svg" alt="" />
+                        </div>
+                        <span class="casey-comments__name">Олена</span>
+                      </div>
+                      <p class="casey-comments__text">
+                        I really appreciate the insights and perspective shared
+                        in this article. It's definitely given me something to
+                        think about and has helped me see things from a
+                        different angle. Thank you for writing and sharing!
+                      </p>
+                      <span class="casey-comments__time">5 min ago</span>
+                    </div>
+                    <div class="casey-comments__item">
+                      <div class="casey-comments__item-head">
+                        <div class="casey-comments__avatar">
+                          <img src="./assets/images/user-logo.svg" alt="" />
+                        </div>
+                        <span class="casey-comments__name">Христина</span>
+                      </div>
+                      <p class="casey-comments__text">
+                        I really appreciate the insights and perspective shared
+                        in this article. It's definitely given me something to
+                        think about and has helped me see things from a
+                        different angle. Thank you for writing and sharing!
+                      </p>
+                      <span class="casey-comments__time">5 min ago</span>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <!-- Casey content end -->
+            </div>
+          </div>
+        </section>
+        <!-- Dashboard end -->
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-inner">
+          <!-- Contact + Socials -->
+          <div class="footer-top">
+            <div class="container footer-top__inner">
+              <div class="footer-contact">
+                <a href="tel:+380966485280">+380 96 648 52 80</a>
+                <span>Зворотний дзвінок</span>
+              </div>
+              <div class="footer-contact">
+                <a href="mailto:stomatwebinar30@gmail.com">stomatwebinar30@gmail.com</a>
+                <span>Запитання та пропозиції</span>
+              </div>
+              <div class="footer-socials">
+                <a href="#"><img src="./assets/images/facebook.svg" alt="Facebook" /></a>
+                <a href="#"><img src="./assets/images/tg.svg" alt="Telegram" /></a>
+                <a href="#"><img src="./assets/images/insta.svg" alt="Instagram" /></a>
+                <a href="#"><img src="./assets/images/youtube.svg" alt="YouTube" /></a>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="footer-hr"></div>
+          </div>
+          <!-- Logo + Nav -->
+          <div class="container footer-mid">
+            <div class="footer-logo-block">
+              <img src="./assets/images/footer-logo.svg" alt="SOCO.COM.UA" />
+              <!-- mobile only payments -->
+              <div class="footer-payments footer-payments--mob">
+                <img src="./assets/images/mastercard.svg" alt="Mastercard" />
+                <img src="./assets/images/visacard.svg" alt="VISA" />
+              </div>
+            </div>
+            <!-- mobile only copyright -->
+            <p class="footer-copy-mob">© 2023 stomatwebinar</p>
+            <nav class="footer-nav">
+              <ul>
+                <li><a href="#">Найближчий вебінар</a></li>
+                <li><a href="#">Купити все для ендо</a></li>
+                <li><a href="#">Серія вебінарів</a></li>
+              </ul>
+              <ul>
+                <li><a href="#">Безкоштовні вебінари</a></li>
+                <li><a href="#">Контакти</a></li>
+              </ul>
+            </nav>
+            <!-- mobile only policy -->
+            <div class="footer-policy-mob">
+              <a href="#">Політика конфіденційності</a>
+              <a href="#">Договір публічної оферти</a>
+            </div>
+          </div>
+          <!-- Copyright + Policy + Payments (desktop) -->
+          <div class="container footer-bottom">
+            <span class="footer-copy">© 2023 stomatwebinar</span>
+            <div class="footer-policy">
+              <a href="#">Політика конфіденційності</a>
+              <a href="#">Договір публічної оферти</a>
+            </div>
+            <div class="footer-payments footer-payments--desk">
+              <img src="./assets/images/mastercard.svg" alt="Mastercard" />
+              <img src="./assets/images/visacard.svg" alt="VISA" />
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- Footer end -->
+    </div>
+
+    <script src="./assets/js/iMask.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Syle CSS -->
+    <link rel="stylesheet" href="./assets/scss/style.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="container header-container">
+                <a href="/" class="header-logo">
+                    <img src="./assets/images/logo.svg" alt="">
+                    <img src="./assets/images/logo-text.svg" alt="">
+                </a>
+                <ul class="header-nav">
+                    <li>
+                        <a href="#">Найближчий вебінар</a>
+                    </li>
+                    <li>
+                        <a href="#">Купити все для ендо</a>
+                    </li>
+                    <li>
+                        <a href="#">Безкоштовні вебінари</a>
+                    </li>
+                    <li>
+                        <a href="#">Контакти</a>
+                    </li>
+                </ul>
+                <div class="header-right">
+                    <a href="#">
+                        <img src="./assets/images/user-logo.svg" alt="">
+                    </a>
+                    <button class="header-bars">
+                        <img src="./assets/images/bars.svg" alt="">
+                    </button>
+                </div>
+            </div>
+        </header>
+        <!-- Header end -->
+
+        <!-- Certificate modal -->
+        <section class="modal data-modal">
+            <div class="modal-bg"></div>
+            <div class="modal-dialog">
+                <div class="container">
+                    <div class="modal-content">
+                        <div class="modal-content__head">
+                            <h2>Редагувати дані</h2>
+                            <button class="modal-close">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.19 11.37L1.44667 20.1133C1.29111 20.2689 1.1 20.3522 0.873333 20.3633C0.646666 20.3744 0.444444 20.2911 0.266666 20.1133C0.0888886 19.9356 0 19.7389 0 19.5233C0 19.3078 0.0888886 19.1111 0.266666 18.9333L9.01 10.19L0.266666 1.44667C0.111111 1.29111 0.0277774 1.1 0.0166663 0.873333C0.00555514 0.646666 0.0888886 0.444444 0.266666 0.266666C0.444444 0.0888886 0.641111 0 0.856667 0C1.07222 0 1.26889 0.0888886 1.44667 0.266666L10.19 9.01L18.9333 0.266666C19.0889 0.111111 19.2806 0.0277774 19.5083 0.0166663C19.7339 0.00555514 19.9356 0.0888886 20.1133 0.266666C20.2911 0.444444 20.38 0.641111 20.38 0.856667C20.38 1.07222 20.2911 1.26889 20.1133 1.44667L11.37 10.19L20.1133 18.9333C20.2689 19.0889 20.3522 19.2806 20.3633 19.5083C20.3744 19.7339 20.2911 19.9356 20.1133 20.1133C19.9356 20.2911 19.7389 20.38 19.5233 20.38C19.3078 20.38 19.1111 20.2911 18.9333 20.1133L10.19 11.37Z" fill="black" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Прізвище ім'я по-батькові" class="form-inp">
+                            <input type="email" placeholder="Електронна пошта" class="form-inp">
+                            <input type="tel" placeholder="Номер телефону" class="form-inp">
+                            <div class="form-date">
+                                <label for="">Ваша дата нарождення</label>
+                                <div class="form-date__inp">
+                                    <input type="number" placeholder="дд" maxlength="2">
+                                    <input type="number" placeholder="мм" maxlength="2">
+                                    <input type="number" placeholder="гг" maxlength="4">
+                                </div>
+                            </div>
+                            <input type="text" placeholder="Ваше місто" class="form-inp">
+                            <select class="form-select">
+                                <option value="Місце роботи" selected>Ваше місце роботи</option>
+                                <option value="select-1">select 1</option>
+                                <option value="select-2">select 2</option>
+                                <option value="select-3">select 3</option>
+                                <option value="select-4">select 4</option>
+                                <option value="select-5">select 5</option>
+                            </select>
+                            <input type="text" placeholder="Ваша посада" class="form-inp">
+                            <div class="form-radio">
+                                <div class="form-radio__item">
+                                    <input type="radio" name="radio1">
+                                    <span>Стоматологія</span>
+                                </div>
+                                <div class="form-radio__item">
+                                    <input type="radio" name="radio1">
+                                    <span>Терапевтична стоматологія</span>
+                                </div>
+                                <div class="form-radio__item">
+                                    <input type="radio" name="radio1">
+                                    <span>Ортопедична стоматологія</span>
+                                </div>
+                                <div class="form-radio__item">
+                                    <input type="radio" name="radio1" checked>
+                                    <span>Хірургічна стоматологія</span>
+                                </div>
+                                <div class="form-radio__item">
+                                    <input type="radio" name="radio1">
+                                    <span>Дитяча стоматологія</span>
+                                </div>
+                                <div class="form-radio__item">
+                                    <input type="radio" name="radio1">
+                                    <span>Пародонтологія</span>
+                                </div>
+                                <div class="form-radio__item">
+                                    <input type="radio" name="radio1">
+                                    <span>Ортодонтія</span>
+                                </div>
+                                <div class="form-radio__item">
+                                    <input type="radio" name="radio1">
+                                    <span>Щелепно-лицева хірургія</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="main-btn">Зберегти зміни</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Certificate modal end -->
+    
+        <main>
+
+            <!-- Webinar data -->
+            <section class="webinar-data">
+                <img src="./assets/images/bg-1.png" alt="" class="bg-1">
+                <img src="./assets/images/bg-2.png" alt="" class="bg-2">
+                <img src="./assets/images/bg-1.png" alt="" class="bg-3">
+                <div class="container webinar-data__container">
+                    <div class="webinar-data__content">
+                        <div class="webinar-data__head">
+                            <h2>Оцінювання набутих знань учасників заходу "Інструментація в пародонтології"</h2>
+                            <p>
+                                Шановні учасники! <br>
+                                Просимо уважно заповнити ваші дані. <br>
+                                Звертаємо вашу увагу, що бали БПР можуть отримати лише лікарі. <br>
+                                Для отримання сертифікату з балами БПР необхідно пройти тестування та набрати не менше 70% правильних відповідей. Кількість спроб не обмежена. <br>
+                                Згідно вимог МОЗ тестування ОБОВ'ЯЗКОВО необхідно пройти до 23-59 сьогоднішнього дня. <br><br>
+                                Учасникам, які не пройдуть тестування бали БПР не нараховуються. <br><br>
+                                Сертифікати з індивідуальним номером та балами БПР надійдуть на електронну пошту протягом тижня.
+                            </p>
+                        </div>
+                        <div class="webinar-data__body">
+                            <div class="text">
+                                <div class="text-label">ПІБ</div>
+                                <div class="text-value">Олег Олегович Винницкий</div>
+                            </div>
+                            <div class="text">
+                                <div class="text-label">Електронна пошта</div>
+                                <a href="mailto:12345678@gmail.com" class="text-value">12345678@gmail.com</a>
+                            </div>
+                            <div class="text">
+                                <div class="text-label">Ваш телефон</div>
+                                <a href="tel:+ 38 099 092 20 00" class="text-value">+ 38 099 092 20 00</a>
+                            </div>
+                            <div class="text">
+                                <div class="text-label">Ваш телефон</div>
+                                <div class="text-value">01.01.1990</div>
+                            </div>
+                            <div class="text">
+                                <div class="text-label">Ваше місто</div>
+                                <div class="text-value">Киів</div>
+                            </div>
+                            <div class="text">
+                                <div class="text-label">Ваше місце роботи</div>
+                                <div class="text-value">Клиника стоматологическая</div>
+                            </div>
+                            <div class="text">
+                                <div class="text-label">Ваша посада</div>
+                                <div class="text-value">Директор клиники</div>
+                            </div>
+                            <div class="text">
+                                <div class="text-label">Ваша спеціальність</div>
+                                <ul class="text-alert">
+                                    <li>Хірургічна стоматологія</li>
+                                    <li>Ортопедична стоматологія</li>
+                                    <li>Терапевтична стоматологія</li>
+                                </ul>
+                            </div>
+                            <button class="main-btn">Редагувати дані</button>
+                        </div>
+                        <div class="question-list">
+                            <div class="question-item">
+                                <div class="question-text">
+                                    <span>1.</span>
+                                    <span>*Основна мета пародонтальної інструментації полягає у:</span>
+                                </div>
+                                <ul class="question-answers">
+                                    <li>
+                                        <input type="radio" name="answer-1" checked>
+                                        <div class="icon"></div>
+                                        <p>C. Усуненні біоплівки та мінералізованих відкладень з кореня зуба</p>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="answer-1">
+                                        <div class="icon"></div>
+                                        <p>B. Поліруванні емалі</p>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="answer-1">
+                                        <div class="icon"></div>
+                                        <p>D. Формуванні ясеневого краю</p>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="answer-1">
+                                        <div class="icon"></div>
+                                        <p>A. Видаленні лише над’ясенного зубного каменю</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-text">
+                                    <span>2.</span>
+                                    <span>*Який інструмент найбільш придатний  для обробки глибоких пародонтальних кишень?</span>
+                                </div>
+                                <ul class="question-answers">
+                                    <li>
+                                        <input type="radio" name="answer-1" checked>
+                                        <div class="icon"></div>
+                                        <p>C. Усуненні біоплівки та мінералізованих відкладень з кореня зуба</p>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="answer-1">
+                                        <div class="icon"></div>
+                                        <p>B. Поліруванні емалі</p>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="answer-1">
+                                        <div class="icon"></div>
+                                        <p>D. Формуванні ясеневого краю</p>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="answer-1">
+                                        <div class="icon"></div>
+                                        <p>A. Видаленні лише над’ясенного зубного каменю</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-text">
+                                    <span>3.</span>
+                                    <span>*Оптимальний робочий кут між лезом кюретки та поверхнею кореня при скейлінгу становить:</span>
+                                </div>
+                                <ul class="question-answers">
+                                    <li>
+                                        <input type="radio" name="answer-1" checked>
+                                        <div class="icon"></div>
+                                        <p>A. 0–40°</p>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="answer-1">
+                                        <div class="icon"></div>
+                                        <p>D. 90°</p>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="answer-1">
+                                        <div class="icon"></div>
+                                        <p>C. 60–80°</p>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="answer-1">
+                                        <div class="icon"></div>
+                                        <p>B. 45–60°</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-text">
+                                    <span>4.</span>
+                                    <span>*Яка помилка найчастіше призводить до травми ясен під час ручної інструментації?</span>
+                                </div>
+                                <ul class="question-answers">
+                                    <li>
+                                        <input type="radio" name="answer-1" checked>
+                                        <div class="icon"></div>
+                                        <p>A. Недостатній тиск</p>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="answer-1">
+                                        <div class="icon"></div>
+                                        <p>C. Надмірний тиск та неправильний кут</p>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="answer-1">
+                                        <div class="icon"></div>
+                                        <p>B. Надто тупе лезо</p>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="answer-1">
+                                        <div class="icon"></div>
+                                        <p>D. Використання ультразвуку</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-text">
+                                    <span>5.</span>
+                                    <span> *Яка характеристика відрізняє кюретки Грейсі від універсальних?</span>
+                                </div>
+                                <ul class="question-answers">
+                                    <li>
+                                        <input type="radio" name="answer-1" checked>
+                                        <div class="icon"></div>
+                                        <p>B. Симетричне лезо</p>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="answer-1">
+                                        <div class="icon"></div>
+                                        <p>D. Використання лише над’ясенно</p>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="answer-1">
+                                        <div class="icon"></div>
+                                        <p>C. Орієнтація на конкретні ділянки зубного ряду</p>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="answer-1">
+                                        <div class="icon"></div>
+                                        <p>A. Два ріжучі краї</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-text">
+                                    <span>6.</span>
+                                    <span> *При використанні ультразвукових насадок у пародонтальних кишенях рекомендовано:</span>
+                                </div>
+                                <ul class="question-answers">
+                                    <li>
+                                        <input type="radio" name="answer-1" checked>
+                                        <div class="icon"></div>
+                                        <p>C. Легкий тиск та постійне іригаційне охолодження</p>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="answer-1">
+                                        <div class="icon"></div>
+                                        <p>D. Вертикальні удари по кореню</p>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="answer-1">
+                                        <div class="icon"></div>
+                                        <p>А. Максимальну потужність апарата</p>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="answer-1">
+                                        <div class="icon"></div>
+                                        <p>B. Сухе поле</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-text">
+                                    <span>7.</span>
+                                    <span>*Яка з наведених технік руху є найбільш ефективною при під’ясенному скейлінгу?</span>
+                                </div>
+                                <ul class="question-answers">
+                                    <li>
+                                        <input type="radio" name="answer-1" checked>
+                                        <div class="icon"></div>
+                                        <p>C. Короткі контрольовані тягнучі рухи</p>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="answer-1">
+                                        <div class="icon"></div>
+                                        <p>D. Кругові полірувальні рухи</p>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="answer-1">
+                                        <div class="icon"></div>
+                                        <p>Довгі горизонтальні рухи</p>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="answer-1">
+                                        <div class="icon"></div>
+                                        <p>B. Вертикальні рубаючі рухи</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-text">
+                                    <span>8.</span>
+                                    <span>*Коли доцільніше застосовувати ультразвукову інструментацію, а не ручну?</span>
+                                </div>
+                                <ul class="question-answers">
+                                    <li>
+                                        <input type="radio" name="answer-1" checked>
+                                        <div class="icon"></div>
+                                        <p>B. При щільних та масивних відкладеннях</p>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="answer-1">
+                                        <div class="icon"></div>
+                                        <p>При мінімальних над’ясенних відкладеннях</p>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="answer-1">
+                                        <div class="icon"></div>
+                                        <p>D. У пацієнтів з рецесіями</p>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="answer-1">
+                                        <div class="icon"></div>
+                                        <p>C. Для фінальної обробки кореня</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-text">
+                                    <span>9.</span>
+                                    <span>*Який фактор найбільше впливає на ефективність пародонтальної інструментації?</span>
+                                </div>
+                                <ul class="question-answers">
+                                    <li>
+                                        <input type="radio" name="answer-1" checked>
+                                        <div class="icon"></div>
+                                        <p>A. Час процедури</p>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="answer-1">
+                                        <div class="icon"></div>
+                                        <p>B. Тип анестезії</p>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="answer-1">
+                                        <div class="icon"></div>
+                                        <p>C. Анатомія кореня та глибина кишені</p>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="answer-1">
+                                        <div class="icon"></div>
+                                        <p>D. Вік пацієнта</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-text">
+                                    <span>10.</span>
+                                    <span>*Основна ціль root surface debridement (RSD) полягає у:</span>
+                                </div>
+                                <ul class="question-answers">
+                                    <li>
+                                        <input type="radio" name="answer-1" checked>
+                                        <div class="icon"></div>
+                                        <p>A. Досягненні ідеально гладкої поверхні кореня</p>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="answer-1">
+                                        <div class="icon"></div>
+                                        <p>B. Видаленні інфікованої біоплівки з мінімальною втратою цементу</p>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="answer-1">
+                                        <div class="icon"></div>
+                                        <p>D. Поліруванні дентину</p>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="answer-1">
+                                        <div class="icon"></div>
+                                        <p>C. Видаленні всього цементу кореня</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <button class="main-btn question-submit">Отправить</button>
+                    </div>
+                </div>
+            </section>
+            <!-- Webinar data end -->
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+        <div class="footer-inner">
+          <!-- Contact + Socials -->
+          <div class="footer-top">
+            <div class="container footer-top__inner">
+              <div class="footer-contact">
+                <a href="tel:+380966485280">+380 96 648 52 80</a>
+                <span>Зворотний дзвінок</span>
+              </div>
+              <div class="footer-contact">
+                <a href="mailto:stomatwebinar30@gmail.com">stomatwebinar30@gmail.com</a>
+                <span>Запитання та пропозиції</span>
+              </div>
+              <div class="footer-socials">
+                <a href="#"><img src="./assets/images/facebook.svg" alt="Facebook" /></a>
+                <a href="#"><img src="./assets/images/tg.svg" alt="Telegram" /></a>
+                <a href="#"><img src="./assets/images/insta.svg" alt="Instagram" /></a>
+                <a href="#"><img src="./assets/images/youtube.svg" alt="YouTube" /></a>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="footer-hr"></div>
+          </div>
+          <!-- Logo + Nav -->
+          <div class="container footer-mid">
+            <div class="footer-logo-block">
+              <img src="./assets/images/footer-logo.svg" alt="SOCO.COM.UA" />
+              <!-- mobile only payments -->
+              <div class="footer-payments footer-payments--mob">
+                <img src="./assets/images/mastercard.svg" alt="Mastercard" />
+                <img src="./assets/images/visacard.svg" alt="VISA" />
+              </div>
+            </div>
+            <!-- mobile only copyright -->
+            <p class="footer-copy-mob">© 2023 stomatwebinar</p>
+            <nav class="footer-nav">
+              <ul>
+                <li><a href="#">Найближчий вебінар</a></li>
+                <li><a href="#">Купити все для ендо</a></li>
+                <li><a href="#">Серія вебінарів</a></li>
+              </ul>
+              <ul>
+                <li><a href="#">Безкоштовні вебінари</a></li>
+                <li><a href="#">Контакти</a></li>
+              </ul>
+            </nav>
+            <!-- mobile only policy -->
+            <div class="footer-policy-mob">
+              <a href="#">Політика конфіденційності</a>
+              <a href="#">Договір публічної оферти</a>
+            </div>
+          </div>
+          <!-- Copyright + Policy + Payments (desktop) -->
+          <div class="container footer-bottom">
+            <span class="footer-copy">© 2023 stomatwebinar</span>
+            <div class="footer-policy">
+              <a href="#">Політика конфіденційності</a>
+              <a href="#">Договір публічної оферти</a>
+            </div>
+            <div class="footer-payments footer-payments--desk">
+              <img src="./assets/images/mastercard.svg" alt="Mastercard" />
+              <img src="./assets/images/visacard.svg" alt="VISA" />
+            </div>
+          </div>
+        </div>
+      </footer>
+        <!-- Footer end -->
+
+    </div>
+
+    <!-- iMask JS -->
+    <script src="./assets/js/iMask.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- JS file -->
+    <script src="./assets/js/main.js"></script>
+
+</body>
+</html>

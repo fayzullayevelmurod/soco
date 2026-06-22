@@ -1,0 +1,46 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap');
+
+@font-face {
+    font-family: 'Arial';
+    src: url('../fonts/Arial/arialmt.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Arial';
+    src: url('../fonts/Arial//arial_bolditalicmt.ttf');
+    font-weight: 700;
+}
+
+$font-inter: "Inter", sans-serif;
+$font-montserrat: "Montserrat", sans-serif;
+$font-raleway: "Raleway", sans-serif;
+$font-unbounded: "Unbounded", sans-serif;
+$font-arial: "Arial", sans-serif;
+// Fonts end
+
+// Colors
+$color-total-black: #000;
+$color-black: #3c3c3c;
+$color-white: #fff;
+$color-grey-300: #f7f8f9;
+$color-grey-400: #cbcbcb;
+$color-light-blue: #d7f3ff;
+$color-blue: #30abe0;
+$color-dark-blue: #0e4e81;
+$color-error: #ff0500;
+// Colors end
+
+@mixin media($value) {
+    @if ($value < 0) {
+        @media screen and (min-width: calc($value * (-1)) + 'px') {
+            @content;
+        }
+
+    } @else {
+        @media screen and (max-width: $value + 'px') {
+            @content;
+        }
+    }
+}

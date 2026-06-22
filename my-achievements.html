@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <!-- Syle CSS -->
+    <link rel="stylesheet" href="./assets/scss/style.css" />
+  </head>
+  <body class="achievements-page">
+    <div class="wrapper">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-top">
+          <div class="container header-top__container">
+            <div class="header-top__text">
+              <img src="./assets/images/fire.png" width="16" alt="" />
+              <p>Текст про ближайший вебинар 01.04.2026</p>
+            </div>
+            <a href="#">Ссылка на вебинар</a>
+          </div>
+        </div>
+        <div class="container header-container">
+          <a href="/" class="header-logo">
+            <img src="./assets/images/logo.svg" alt="" />
+            <img src="./assets/images/logo-text.svg" alt="" />
+          </a>
+          <ul class="header-nav">
+            <li>
+              <a href="#">Найближчий вебінар</a>
+            </li>
+            <li>
+              <a href="#">Купити все для ендо</a>
+            </li>
+            <li>
+              <a href="#">Безкоштовні вебінари</a>
+            </li>
+            <li>
+              <a href="#">Контакти</a>
+            </li>
+          </ul>
+          <div class="header-right">
+            <a href="#">
+              <img src="./assets/images/user-logo.svg" alt="" />
+            </a>
+            <button class="header-bars">
+              <img src="./assets/images/bars.svg" alt="" />
+            </button>
+          </div>
+        </div>
+      </header>
+      <!-- Header end -->
+
+      <!-- Certificate modal -->
+      <section class="modal data-modal">
+        <div class="modal-bg"></div>
+        <div class="modal-dialog">
+          <div class="container">
+            <div class="modal-content">
+              <div class="modal-content__head">
+                <h2>Редагувати дані</h2>
+                <button class="modal-close">
+                  <svg
+                    width="21"
+                    height="21"
+                    viewBox="0 0 21 21"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.19 11.37L1.44667 20.1133C1.29111 20.2689 1.1 20.3522 0.873333 20.3633C0.646666 20.3744 0.444444 20.2911 0.266666 20.1133C0.0888886 19.9356 0 19.7389 0 19.5233C0 19.3078 0.0888886 19.1111 0.266666 18.9333L9.01 10.19L0.266666 1.44667C0.111111 1.29111 0.0277774 1.1 0.0166663 0.873333C0.00555514 0.646666 0.0888886 0.444444 0.266666 0.266666C0.444444 0.0888886 0.641111 0 0.856667 0C1.07222 0 1.26889 0.0888886 1.44667 0.266666L10.19 9.01L18.9333 0.266666C19.0889 0.111111 19.2806 0.0277774 19.5083 0.0166663C19.7339 0.00555514 19.9356 0.0888886 20.1133 0.266666C20.2911 0.444444 20.38 0.641111 20.38 0.856667C20.38 1.07222 20.2911 1.26889 20.1133 1.44667L11.37 10.19L20.1133 18.9333C20.2689 19.0889 20.3522 19.2806 20.3633 19.5083C20.3744 19.7339 20.2911 19.9356 20.1133 20.1133C19.9356 20.2911 19.7389 20.38 19.5233 20.38C19.3078 20.38 19.1111 20.2911 18.9333 20.1133L10.19 11.37Z"
+                      fill="black"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  placeholder="Прізвище ім'я по-батькові"
+                  class="form-inp"
+                />
+                <input
+                  type="email"
+                  placeholder="Електронна пошта"
+                  class="form-inp"
+                />
+                <input
+                  type="tel"
+                  placeholder="Номер телефону"
+                  class="form-inp"
+                />
+                <div class="form-date">
+                  <label for="">Ваша дата нарождення</label>
+                  <div class="form-date__inp">
+                    <input type="number" placeholder="дд" maxlength="2" />
+                    <input type="number" placeholder="мм" maxlength="2" />
+                    <input type="number" placeholder="гг" maxlength="4" />
+                  </div>
+                </div>
+                <input type="text" placeholder="Ваше місто" class="form-inp" />
+                <select class="form-select">
+                  <option value="Місце роботи" selected>
+                    Ваше місце роботи
+                  </option>
+                  <option value="select-1">select 1</option>
+                  <option value="select-2">select 2</option>
+                  <option value="select-3">select 3</option>
+                  <option value="select-4">select 4</option>
+                  <option value="select-5">select 5</option>
+                </select>
+                <input type="text" placeholder="Ваша посада" class="form-inp" />
+                <div class="form-radio">
+                  <div class="form-radio__item">
+                    <input type="radio" name="radio1" />
+                    <span>Стоматологія</span>
+                  </div>
+                  <div class="form-radio__item">
+                    <input type="radio" name="radio1" />
+                    <span>Терапевтична стоматологія</span>
+                  </div>
+                  <div class="form-radio__item">
+                    <input type="radio" name="radio1" />
+                    <span>Ортопедична стоматологія</span>
+                  </div>
+                  <div class="form-radio__item">
+                    <input type="radio" name="radio1" checked />
+                    <span>Хірургічна стоматологія</span>
+                  </div>
+                  <div class="form-radio__item">
+                    <input type="radio" name="radio1" />
+                    <span>Дитяча стоматологія</span>
+                  </div>
+                  <div class="form-radio__item">
+                    <input type="radio" name="radio1" />
+                    <span>Пародонтологія</span>
+                  </div>
+                  <div class="form-radio__item">
+                    <input type="radio" name="radio1" />
+                    <span>Ортодонтія</span>
+                  </div>
+                  <div class="form-radio__item">
+                    <input type="radio" name="radio1" />
+                    <span>Щелепно-лицева хірургія</span>
+                  </div>
+                </div>
+              </div>
+              <button class="main-btn">Зберегти зміни</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Certificate modal end -->
+
+      <main>
+        <!-- Dashboard -->
+        <section class="dashboard">
+          <div class="dashboard-container">
+            <button class="dashboard-btn">
+              <span class="dashboard-btn__left">
+                <img src="./assets/images/nav-link-icon-4-active.svg" alt="" />
+                <span>Мої досягнення</span>
+              </span>
+              <img src="./assets/images/nav-icon.svg" alt="" class="icon" />
+            </button>
+            <div class="dashboard-left">
+              <ul class="dashboard-nav">
+                            <li>
+                                <a href="./dashboard.html">
+                                    <img src="./assets/images/nav-link-icon-1-active.svg" alt="">
+                                    <img src="./assets/images/nav-link-icon-1.svg" alt="">
+                                    <span>Головна</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./certificate.html">
+                                    <img src="./assets/images/nav-link-icon-2-active.svg" alt="">
+                                    <img src="./assets/images/nav-link-icon-2.svg" alt="">
+                                    <span>Мої сертифікати</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./webinar.html">
+                                    <img src="./assets/images/nav-link-icon-3-active.svg" alt="">
+                                    <img src="./assets/images/nav-link-icon-3.svg" alt="">
+                                    <span>Вебінари у записі</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./my-achievements.html" class="active">
+                                    <img src="./assets/images/nav-link-icon-4-active.svg" alt="">
+                                    <img src="./assets/images/nav-link-icon-4.svg" alt="">
+                                    <span>Мої досягнення</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./tarif.html">
+                                    <img src="./assets/images/nav-link-icon-5-active.svg" alt="">
+                                    <img src="./assets/images/nav-link-icon-5.svg" alt="">
+                                    <span>Пакетні пропозиції</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./casey.html">
+                                    <img src="./assets/images/nav-link-icon-6-active.svg" alt="">
+                                    <img src="./assets/images/nav-link-icon-6.svg" alt="">
+                                    <span>Кейси</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./assets/images/nav-link-icon-7-active.svg" alt="">
+                                    <img src="./assets/images/nav-link-icon-7.svg" alt="">
+                                    <span>Тестування</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./equipment.html">
+                                    <img src="./assets/images/nav-link-icon-7-active.svg" alt="">
+                                    <img src="./assets/images/nav-link-icon-7.svg" alt="">
+                                    <span>Огляд обладнання</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./assets/images/nav-link-icon-1-active.svg" alt="">
+                                    <img src="./assets/images/nav-link-icon-1.svg" alt="">
+                                    <span>Блог</span>
+                                </a>
+                            </li>
+                        </ul>
+            </div>
+            <div class="dashboard-right my-achievements__right">
+              <!-- Achievement -->
+              <section class="achievement">
+                <div class="achievement-balance">Ваш баланс: 275 баллів</div>
+
+                <div class="achievement-levels swiper">
+                  <div class="swiper-wrapper">
+                    <div class="achievement-level swiper-slide is-complete">
+                      <img src="./assets/images/slide-1.png" alt="" />
+                      <button type="button">Отриманий <span>›</span></button>
+                      <i>
+                        <img src="assets/images/white-check.svg" alt="">
+                      </i>
+                      <p>100 баллів</p>
+                    </div>
+                    <div class="achievement-level swiper-slide is-complete">
+                      <img src="./assets/images/slide-2.png" alt="" />
+                      <b>250 баллів</b>
+                      <button class="achievement-gift-open" type="button">
+                        Отримати подарунок <span>›</span>
+                      </button>
+                      <i>
+                        <img src="assets/images/white-check.svg" alt="">
+                      </i>
+                      <p>250 баллів</p>
+                    </div>
+                    <div class="achievement-level swiper-slide">
+                      <img src="./assets/images/slide-3.png" alt="" />
+                      <button type="button" disabled>
+                        Поки закритий <span>›</span>
+                      </button>
+                      <i>
+                        <img src="assets/images/white-check.svg" alt="">
+                      </i>
+                      <p>450 баллів</p>
+                    </div>
+                    <div class="achievement-level swiper-slide">
+                      <img src="./assets/images/slide-4.png" alt="" />
+                      <button type="button" disabled>
+                        Поки закритий <span>›</span>
+                      </button>
+                      <i>
+                        <img src="assets/images/white-check.svg" alt="">
+                      </i>
+                      <p>700 баллів</p>
+                    </div>
+                    <div class="achievement-level swiper-slide">
+                      <img src="./assets/images/slide-4.png" alt="" />
+                      <button type="button" disabled>
+                        Поки закритий <span>›</span>
+                      </button>
+                      <i>
+                        <img src="assets/images/white-check.svg" alt="">
+                      </i>
+                      <p>950 баллів</p>
+                    </div>
+                  </div>
+                </div>
+
+                <h2>За що йде нарахування балів?</h2>
+                <div class="achievement-points">
+                  <article>
+                    <p>Прочитати кейс</p>
+                    <strong>1 бал</strong
+                    ><img
+                      src="./assets/images/achievement-point-book.svg"
+                      alt=""
+                    />
+                  </article>
+                  <article>
+                    <p>Огляд продукції</p>
+                    <strong>1 бал</strong
+                    ><img
+                      src="./assets/images/achievement-point-video.svg"
+                      alt=""
+                    />
+                  </article>
+                  <article>
+                    <p>Прочитали статтю</p>
+                    <strong>1 бал</strong
+                    ><img
+                      src="./assets/images/achievement-point-article-1.svg"
+                      alt=""
+                    />
+                  </article>
+                  <article>
+                    <p>Запропонували свій кейс<br />і його опублікували</p>
+                    <strong>15 балів</strong
+                    ><img
+                      src="./assets/images/achievement-point-publish.svg"
+                      alt=""
+                    />
+                  </article>
+                  <article>
+                    <p>Купівля вебінару</p>
+                    <strong>20 балів</strong
+                    ><img
+                      src="./assets/images/achievement-point-coins.svg"
+                      alt=""
+                    />
+                  </article>
+                  <article>
+                    <p>
+                      Розгорнутий відгук + відео<br />(огляд або відео відгук )
+                    </p>
+                    <strong>50 балів</strong
+                    ><img
+                      src="./assets/images/achievement-point-video.svg"
+                      alt=""
+                    />
+                  </article>
+                  <article>
+                    <p>Купівля пакету вебінарів</p>
+                    <strong>150 балів</strong
+                    ><img
+                      src="./assets/images/achievement-point-coins.svg"
+                      alt=""
+                    />
+                  </article>
+                </div>
+              </section>
+              <!-- Achievement end -->
+            </div>
+          </div>
+        </section>
+        <!-- Dashboard end -->
+      </main>
+
+      <section
+        class="achievement-popup achievement-gifts-modal active"
+        aria-hidden="true"
+      >
+        <div class="achievement-popup__backdrop"></div>
+        <div class="achievement-popup__dialog">
+          <button
+            class="achievement-popup__close"
+            type="button"
+            aria-label="Закрити"
+          >
+            <img src="assets/images/close.svg" alt="">
+          </button>
+          <p>Подарунок ваш!</p>
+          <h2>Виберіть будь-який<br />з подарунків</h2>
+          <div class="achievement-gifts">
+            <label class="is-selected"
+              ><img src="./assets/images/modal-prize-1.png" alt="" /><span
+                >Ваучер Юджой 250 грн</span
+              ><input type="radio" name="gift" checked /><em>Обрати</em></label
+            >
+            <label
+              ><img src="./assets/images/modal-prize-2.png" alt="" /><span
+                >Знижка на вебінар 250 грн</span
+              ><input type="radio" name="gift" /><em>Обрати</em></label
+            >
+            <label
+              ><img src="./assets/images/modal-prize-1.png" alt="" /><span
+                >Ваучер BPH 250 грн</span
+              ><input type="radio" name="gift" /><em>Обрати</em></label
+            >
+            <label
+              ><img src="./assets/images/modal-prize-2.png" alt="" />Знижка 250 грн на офлайн курс<br />Ігоря Ноєнко</span
+              ><input type="radio" name="gift" /><em>Обрати</em></label
+            >
+            <label
+              ><img src="./assets/images/modal-prize-1.png" alt="" /><span
+                >Ваучер на книжку ЕНДОДОНТІЯ<br />МИСТЕЦТВО І НАУКА 250
+                грн</span
+              ><input type="radio" name="gift" /><em>Обрати</em></label
+            >
+          </div>
+          <button class="main-btn achievement-claim" type="button">
+            Забрати подарунок
+          </button>
+        </div>
+      </section>
+
+      <section
+        class="achievement-popup achievement-voucher-modal"
+        aria-hidden="true"
+      >
+        <div class="achievement-popup__backdrop"></div>
+        <div class="achievement-popup__dialog achievement-voucher">
+          <div class="achievement-confetti">◆　▮　●　◆　▮　●　◆</div>
+          <button
+            class="achievement-popup__close"
+            type="button"
+            aria-label="Закрити"
+          >
+            <img src="assets/images/close.svg" alt="">
+          </button>
+          <h2>Ваучер Юржой<br />250 грн</h2>
+          <img src="./assets/images/achievement-gift-250.png" alt="" />
+          <h3>Ваш промокод</h3>
+          <div class="achievement-code">
+            <strong>655shbvibedwifvHGt</strong> 
+            <img src="assets/images/copy.svg" alt="">
+            <small>Ваучер дійсний 30 днів</small>
+          </div>
+          <p>
+            Ваучер дійсний 30 днів , якщо это наприклад грн , соко, юджой или
+            вебінар , то добавляється надпис *ваучер дійсний 30 днів при
+            замовленні від 3000 грн
+          </p>
+          <button class="main-btn" type="button">Отримати подарунок</button>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-inner">
+          <!-- Contact + Socials -->
+          <div class="footer-top">
+            <div class="container footer-top__inner">
+              <div class="footer-contact">
+                <a href="tel:+380966485280">+380 96 648 52 80</a>
+                <span>Зворотний дзвінок</span>
+              </div>
+              <div class="footer-contact">
+                <a href="mailto:stomatwebinar30@gmail.com">stomatwebinar30@gmail.com</a>
+                <span>Запитання та пропозиції</span>
+              </div>
+              <div class="footer-socials">
+                <a href="#"><img src="./assets/images/facebook.svg" alt="Facebook" /></a>
+                <a href="#"><img src="./assets/images/tg.svg" alt="Telegram" /></a>
+                <a href="#"><img src="./assets/images/insta.svg" alt="Instagram" /></a>
+                <a href="#"><img src="./assets/images/youtube.svg" alt="YouTube" /></a>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="footer-hr"></div>
+          </div>
+          <!-- Logo + Nav -->
+          <div class="container footer-mid">
+            <div class="footer-logo-block">
+              <img src="./assets/images/footer-logo.svg" alt="SOCO.COM.UA" />
+              <!-- mobile only payments -->
+              <div class="footer-payments footer-payments--mob">
+                <img src="./assets/images/mastercard.svg" alt="Mastercard" />
+                <img src="./assets/images/visacard.svg" alt="VISA" />
+              </div>
+            </div>
+            <!-- mobile only copyright -->
+            <p class="footer-copy-mob">© 2023 stomatwebinar</p>
+            <nav class="footer-nav">
+              <ul>
+                <li><a href="#">Найближчий вебінар</a></li>
+                <li><a href="#">Купити все для ендо</a></li>
+                <li><a href="#">Серія вебінарів</a></li>
+              </ul>
+              <ul>
+                <li><a href="#">Безкоштовні вебінари</a></li>
+                <li><a href="#">Контакти</a></li>
+              </ul>
+            </nav>
+            <!-- mobile only policy -->
+            <div class="footer-policy-mob">
+              <a href="#">Політика конфіденційності</a>
+              <a href="#">Договір публічної оферти</a>
+            </div>
+          </div>
+          <!-- Copyright + Policy + Payments (desktop) -->
+          <div class="container footer-bottom">
+            <span class="footer-copy">© 2023 stomatwebinar</span>
+            <div class="footer-policy">
+              <a href="#">Політика конфіденційності</a>
+              <a href="#">Договір публічної оферти</a>
+            </div>
+            <div class="footer-payments footer-payments--desk">
+              <img src="./assets/images/mastercard.svg" alt="Mastercard" />
+              <img src="./assets/images/visacard.svg" alt="VISA" />
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- Footer end -->
+    </div>
+
+    <!-- iMask JS -->
+    <script src="./assets/js/iMask.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- JS file -->
+    <script src="./assets/js/main.js"></script>
+    <script>
+      (() => {
+        const giftsModal = document.querySelector(".achievement-gifts-modal");
+        const voucherModal = document.querySelector(
+          ".achievement-voucher-modal",
+        );
+        const setModal = (modal, open) => {
+          modal.classList.toggle("is-open", open);
+          modal.setAttribute("aria-hidden", String(!open));
+          document.body.style.overflow = open ? "hidden" : "";
+        };
+        document
+          .querySelector(".achievement-gift-open")
+          .addEventListener("click", () => setModal(giftsModal, true));
+        document
+          .querySelector(".achievement-claim")
+          .addEventListener("click", () => {
+            setModal(giftsModal, false);
+            setModal(voucherModal, true);
+          });
+        document
+          .querySelectorAll(
+            ".achievement-popup__close, .achievement-popup__backdrop",
+          )
+          .forEach((button) =>
+            button.addEventListener("click", () =>
+              setModal(button.closest(".achievement-popup"), false),
+            ),
+          );
+        document.querySelectorAll(".achievement-gifts label").forEach((label) =>
+          label.addEventListener("click", () => {
+            document
+              .querySelectorAll(".achievement-gifts label")
+              .forEach((item) => item.classList.remove("is-selected"));
+            label.classList.add("is-selected");
+          }),
+        );
+      })();
+    </script>
+  </body>
+</html>
